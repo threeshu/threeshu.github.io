@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-26T15:18:15.008Z</updated>
+  <updated>2017-08-28T17:23:05.951Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,49 +16,73 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>MyWorld</title>
-    <link href="http://yoursite.com/2017/08/26/MyWorld/"/>
-    <id>http://yoursite.com/2017/08/26/MyWorld/</id>
-    <published>2017-08-26T14:51:01.000Z</published>
-    <updated>2017-08-26T15:18:15.008Z</updated>
+    <title>基于HEXO的个人博客</title>
+    <link href="http://yoursite.com/2017/08/28/%E5%9F%BA%E4%BA%8EHEXO%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/2017/08/28/基于HEXO的个人博客/</id>
+    <published>2017-08-28T09:45:43.000Z</published>
+    <updated>2017-08-28T17:23:05.951Z</updated>
     
-    <content type="html"><![CDATA[<p>不知道能不能发表成功！啦啦啦阿拉啦啦啦啦啦阿里啦啦啦啦<del>~</del><del>~</del><del>~</del>~~</p>
+    <content type="html"><![CDATA[<p>###Hexo官方定义</p>
+<ul>
+<li>Hexo是一个快速、简洁且高效的博客框架；</li>
+<li>Hexo使用Markdown（或其他渲染引擎）解析文章；</li>
+<li>在几秒内，即可利用靓丽的主题生成静态网页。<br>###本地安装Hexo的教程<br>######安装Git</li>
+<li>注册GitHub账号，打开git bash使用<code>$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code>创建SSH Key;</li>
+<li>登陆GitHub，打开“account setting”-&gt;”ssh keys”-&gt;”add ssh key”,填上任意title，在Key文本框里粘贴id_rsa.pub文件的内容，点“add key”，你就可以看到已经添加的key。<br>######安装Node.js<br>######安装Hexo</li>
+<li>使用命令<code>$ npm install -g hexo-cli</code>进行安装；<br>######搭建博客<br>######安装Hexo完成后，执行下列命令，Hexo将会在指定文件中新建所需要的文件(例如blog)<br>-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init blog</div><div class="line">$ cd blog</div><div class="line">$ npm install</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>建成后blog目录结构如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7637246-b0c76d75004f7dd7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>config.yml:站点配置信息<br>source:存放编写的博客文章</p>
+<p>######更换主题</p>
+<ul>
+<li>下载主题<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd blog</div><div class="line">git clone https://github.com//iissnan/hexo-theme-next theme/next</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>克隆最新的next主题到你的博客文件中去</p>
+<ul>
+<li>到站点配置文件更改<code>theme: next</code>；</li>
+<li>然后输入以下命令进行本地测试<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo clean;hexo generate;</div><div class="line">$ hexo s --debug;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>######添加分类和标签(两者其实添加方式相同）</p>
+<ul>
+<li>先把主题配置文件下修改为<code>menu: /categories</code>把前面的#去掉,然后输入以下命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo cd blog;</div><div class="line">$ hexo new page &quot;categories&quot;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>然后你的source文件下多了一个categories文件夹，里面有个index.md，打开此文档，添加<code>type: &quot;categories&quot;</code>，不需要评论就再加上<code>comments: false</code>;</p>
+<ul>
+<li>==================================================<h1 id="刚开始添加分类页面和标签页面本地测试一直显示can-t-find，感觉什么都跟网上教程一样啊，后来看了一下bug的地方，原来timezone填错了，我填的Fujian，哎，愚蠢。"><a href="#刚开始添加分类页面和标签页面本地测试一直显示can-t-find，感觉什么都跟网上教程一样啊，后来看了一下bug的地方，原来timezone填错了，我填的Fujian，哎，愚蠢。" class="headerlink" title="刚开始添加分类页面和标签页面本地测试一直显示can`t find，感觉什么都跟网上教程一样啊，后来看了一下bug的地方，原来timezone填错了，我填的Fujian，哎，愚蠢。"></a>刚开始添加分类页面和标签页面本地测试一直显示can`t find，感觉什么都跟网上教程一样啊，后来看了一下bug的地方，原来timezone填错了，我填的Fujian，哎，愚蠢。</h1>######新建文章</li>
+<li>输入命令<code>$ hexo new “hello world”</code>，source文件夹下新建helloworld.md,然后你就可以开始写文章啦！</li>
+<li>==================================================<h1 id="刚开始文章不能发表是我修改完没有部署网站，所以新的内容显示不出来"><a href="#刚开始文章不能发表是我修改完没有部署网站，所以新的内容显示不出来" class="headerlink" title="刚开始文章不能发表是我修改完没有部署网站，所以新的内容显示不出来"></a>刚开始文章不能发表是我修改完没有部署网站，所以新的内容显示不出来</h1>######重要命令</li>
+<li>本地测试<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo c</div><div class="line">$ hexo g</div><div class="line">$ hexo s</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>然后就可以访问你的<code>localhost:4000</code>啦~</p>
+<ul>
+<li>修改后部署<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo d</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>然后就可以通过域名访问啦~</p>
+<ul>
+<li>推荐简书，支持Markdown，写文章可以实时预览，所以可以先在简书写完再弄到自己博客中~</li>
+</ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;不知道能不能发表成功！啦啦啦阿拉啦啦啦啦啦阿里啦啦啦啦&lt;del&gt;~&lt;/del&gt;&lt;del&gt;~&lt;/del&gt;&lt;del&gt;~&lt;/del&gt;~~&lt;/p&gt;
-
+      &lt;p&gt;###Hexo官方定义&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hexo是一个快速、简洁且高效的博客框架；&lt;/li&gt;
+&lt;li&gt;Hexo使用Markdown（或其他渲染引擎）解析文章；&lt;/li&gt;
+&lt;li&gt;在几秒内，即可利用靓丽的主题生成静态网页。&lt;br&gt;###本地安装Hexo的教程&lt;br&gt;
     
     </summary>
     
+      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2017/07/06/hello-world/"/>
-    <id>http://yoursite.com/2017/07/06/hello-world/</id>
-    <published>2017-07-06T09:05:24.575Z</published>
-    <updated>2017-08-26T15:23:43.597Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
   </entry>
   
