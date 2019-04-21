@@ -1,5 +1,10 @@
-title: Nothing is OK
+title: 被Hexo折磨的一天
 date: 2019/4/21
+tags: 
+- 吐槽
+categories:
+- HEXO
 ---
+搞了一天终于把hexo同步了（划掉），实际上是从头再来ORZ
+### 前情提要
 
-多机同步要是还不行，我就要杀个哈密瓜泄愤啦！
