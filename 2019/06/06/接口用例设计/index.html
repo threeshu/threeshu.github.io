@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>接口用例设计 | 菜鸡的挣扎</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="有时候会碰到三四十个参数的接口，数量之巨大令人惶惶不安。 这时候我就掉头发啊，这该怎么设计接口用例啊，总不能无脑参数组合吧？C40/1+C40/2+…C40/40=反正很大！ 我有那么蠢吗？还真有！ 面对只有两三个参数的接口，我还真的是这么办的！然后碰到40个接口的时候，我就傻眼了！让你不学无术！让你不学无术！让你不学无术！ 于是经过多番百度+Google之后，以我浅薄的理解，大概就是三个步骤：">
+<meta name="keywords" content="接口">
+<meta property="og:type" content="article">
+<meta property="og:title" content="接口用例设计">
+<meta property="og:url" content="https://threeshu.github.io/2019/06/06/接口用例设计/index.html">
+<meta property="og:site_name" content="菜鸡的挣扎">
+<meta property="og:description" content="有时候会碰到三四十个参数的接口，数量之巨大令人惶惶不安。 这时候我就掉头发啊，这该怎么设计接口用例啊，总不能无脑参数组合吧？C40/1+C40/2+…C40/40=反正很大！ 我有那么蠢吗？还真有！ 面对只有两三个参数的接口，我还真的是这么办的！然后碰到40个接口的时候，我就傻眼了！让你不学无术！让你不学无术！让你不学无术！ 于是经过多番百度+Google之后，以我浅薄的理解，大概就是三个步骤：">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-10-31T12:38:41.040Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="接口用例设计">
+<meta name="twitter:description" content="有时候会碰到三四十个参数的接口，数量之巨大令人惶惶不安。 这时候我就掉头发啊，这该怎么设计接口用例啊，总不能无脑参数组合吧？C40/1+C40/2+…C40/40=反正很大！ 我有那么蠢吗？还真有！ 面对只有两三个参数的接口，我还真的是这么办的！然后碰到40个接口的时候，我就傻眼了！让你不学无术！让你不学无术！让你不学无术！ 于是经过多番百度+Google之后，以我浅薄的理解，大概就是三个步骤：">
+  
+    <link rel="alternate" href="/atom.xml" title="菜鸡的挣扎" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+</html>
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class href="/index.html">Home</a></li>
+        
+          <li><a class href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">菜鸡的挣扎</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-接口用例设计" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      接口用例设计
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/06/06/接口用例设计/" class="article-date"><time datetime="2019-06-05T16:36:49.000Z" itemprop="datePublished">2019-06-06</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/接口/">接口</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有时候会碰到三四十个参数的接口，数量之巨大令人惶惶不安。</p>
+<p>这时候我就掉头发啊，这该怎么设计接口用例啊，总不能无脑参数组合吧？C40/1+C40/2+…C40/40=反正很大！</p>
+<p>我有那么蠢吗？还真有！</p>
+<p>面对只有两三个参数的接口，我还真的是这么办的！然后碰到40个接口的时候，我就傻眼了！让你不学无术！让你不学无术！让你不学无术！</p>
+<p>于是经过多番百度+Google之后，以我浅薄的理解，大概就是三个步骤：</p>
+<p>1.理出这个接口的业务逻辑，优先级1（相当于测试用例的P0用例）</p>
+<p>我觉得这个是最难的步骤，因为你将面临重重阻碍。可能是接口文档不完整，缺失接口的描述细节，只草草记录接口的参数，有时候甚至连参数值都没有，导致你无法获取到这个接口是在什么情况下会调用到。可能是开发的不配合，你去询问开发逻辑细节，他们却爱搭不理，消息已读不回，导致你不仅无法完成任务还很烦躁。但是，你厚着脸皮也要搞清楚这些业务逻辑，如果你只是一知半解，浑浑噩噩，之后编写接口用例的时候就是你苦难的开端。</p>
+<p>2.根据接口参数的含义开拓思维，想象用户会有哪些骚操作，进行参数组合，优先级2（相当于测试用例的P1用例）</p>
+<p>这个过程的参数组合也不是无脑组合，你得思考一下这个场景是否有必要，没有必要的场景设计出来也是冗余。如果刚开始自己无法判断是不是冗余的场景，可以搞一个测试导图评审，人多力量大！</p>
+<p>3.接口参数的数据类型、异常值校验等等（相当于测试用例的P2、P3级用例）</p>
+<p>请合理的放飞自我展开想象。</p>
+<p>菜鸡的我目前只能想到这些，压测之类的接口测试目前我还没涉及到，待我之后康康！</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://threeshu.github.io/2019/06/06/接口用例设计/" data-id="ck2zyd3uq0008tgvz5tun5lxv" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/接口/">接口</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2019/05/07/ArithmeticStuding/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">《算法图解》读书笔记</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2019/10/31/Have-something-to-say-in-2019/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">Have something to say in 2019</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+</div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/HEXO/">HEXO</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/接口/">接口</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/日志/">日志</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/算法/">算法</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/规划总结/">规划总结</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/HEXO/">HEXO</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/吐槽/">吐槽</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/接口/">接口</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/日志/">日志</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/算法/">算法</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/规划总结/">规划总结</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/HEXO/" style="font-size: 10px;">HEXO</a> <a href="/tags/吐槽/" style="font-size: 10px;">吐槽</a> <a href="/tags/接口/" style="font-size: 10px;">接口</a> <a href="/tags/日志/" style="font-size: 10px;">日志</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/规划总结/" style="font-size: 10px;">规划总结</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/11/">November 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/10/">October 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/06/">June 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2019/11/14/读-七芒星/">读-七芒星</a>
+        </li>
+      
+        <li>
+          <a href="/2019/10/31/Have-something-to-say-in-2019/">Have something to say in 2019</a>
+        </li>
+      
+        <li>
+          <a href="/2019/06/06/接口用例设计/">接口用例设计</a>
+        </li>
+      
+        <li>
+          <a href="/2019/05/07/ArithmeticStuding/">《算法图解》读书笔记</a>
+        </li>
+      
+        <li>
+          <a href="/2019/04/21/Nothing is OK/">被Hexo折磨的一天</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Nil<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
